@@ -1,9 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatGridListModule } from '@angular/material/grid-list'; 
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MockToolModule } from './features/mock-tool/mock-tool.module';
+import { MockToolStatusModule } from './features/mock-tool-status/mock-tool-status.module';
+import { MockPartProductionModule } from './features/mock-part-production/mock-part-production.module';
 
 @NgModule({
   declarations: [
@@ -11,8 +14,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule
+    MatSliderModule,
+    MatGridListModule,
+    MockToolModule,
+    MockToolStatusModule,
+    MockPartProductionModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

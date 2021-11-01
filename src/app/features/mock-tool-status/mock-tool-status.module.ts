@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToolComponent } from './components/tool/tool.component';
+import { ToolStatusComponent } from './components/tool-status/tool-status.component';
+
+
 
 @NgModule({
   declarations: [
-    ToolComponent,
+    ToolStatusComponent
   ],
   imports: [
     CommonModule
   ]
 })
-export class MockToolModule { }
+export class MockToolStatusModule { }

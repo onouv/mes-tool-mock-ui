@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ToolComponentComponent } from './tool-component.component';
+import { ToolStatusComponent } from './tool-status.component';
 
-describe('ToolComponentComponent', () => {
-  let component: ToolComponentComponent;
-  let fixture: ComponentFixture<ToolComponentComponent>;
+describe('ToolStatusComponent', () => {
+  let component: ToolStatusComponent;
+  let fixture: ComponentFixture<ToolStatusComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToolComponentComponent ]
+      declarations: [ ToolStatusComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToolComponentComponent);
+    fixture = TestBed.createComponent(ToolStatusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
