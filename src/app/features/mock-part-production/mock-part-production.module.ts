@@ -6,10 +6,13 @@ import { PartProductionComponent } from './components/part-production/part-produ
 
 @NgModule({
   declarations: [
-    PartProductionComponent
+    PartProductionComponent,
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+  ],
+  exports: [
+    PartProductionComponent,
+  ],
 })
 export class MockPartProductionModule { }

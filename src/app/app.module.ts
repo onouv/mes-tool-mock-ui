@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatSliderModule } from '@angular/material/slider';
 import { MatGridListModule } from '@angular/material/grid-list'; 
 
 import { AppComponent } from './app.component';
@@ -14,7 +13,6 @@ import { MockPartProductionModule } from './features/mock-part-production/mock-p
   ],
   imports: [
     BrowserModule,
-    MatSliderModule,
     MatGridListModule,
     MockToolModule,
     MockToolStatusModule,
