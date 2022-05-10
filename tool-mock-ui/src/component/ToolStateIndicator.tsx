@@ -1,6 +1,7 @@
 import React from "react";
 import {ToolStates, isDown, isUpIdle, isUpStopped, isUpProcessing} from "../model/ToolStates";
 import { StatesError } from "../model/state-errors";
+import {Chip} from "@mui/material";
 
 
 export interface ToolStateProps {
@@ -8,7 +9,7 @@ export interface ToolStateProps {
 }
 
 const errorDisplay = (error: StatesError) => (
-    <>{`${error.toString()}`}</>
+    <Chip color="error" variant="outlined" label={`${error.toString()}`}/>
 );
 
 export const ToolStateIndicator: React.FC<ToolStateProps> = ({states}: ToolStateProps) => {
@@ -17,13 +18,22 @@ export const ToolStateIndicator: React.FC<ToolStateProps> = ({states}: ToolState
     try {
 
         if(isDown(states))
-            display = <>DOWN</>;
+            display = <Chip color="error" label="DOWN"/>;
         if(isUpIdle(states))
-            display = <>UP | IDLE</>;
+            display = <>
+                <Chip color="success" label="UP"/>
+                <Chip color="primary" label="IDLE"/>
+            </>;
         if(isUpStopped(states))
-            display = <>UP | STOPPED</>;
+            display = <>
+                <Chip color="success" label="UP"/>
+                <Chip color="warning" label="STOPPED"/>
+            </>;
         if(isUpProcessing(states))
-            display = <>UP | PROCESSING</>;
+            display = <>
+                <Chip color="success" label="UP"/>
+                <Chip color="success" label="PROCESSING"/>
+            </>;
 
     } catch (error) {
         if(error instanceof StatesError)

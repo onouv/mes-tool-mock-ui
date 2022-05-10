@@ -1,7 +1,8 @@
 import React from "react";
-import {ToolOverviewItem} from "./ToolOverviewItem";
-import {toolApi} from "../service/ToolApi";
+import {Box, Container, Grid, Paper, CssBaseline} from "@mui/material";
 
+import {toolApi} from "../service/ToolApi";
+import {ToolOverviewList} from "./ToolOverviewList";
 
 export const ToolOverview = () => {
 
@@ -14,15 +15,30 @@ export const ToolOverview = () => {
         return (<div><p>ERROR !</p></div>);
 
     return (
-        <div>
-            <p>Tool Overview</p>
-            <table>
-                <tbody>
-                {data.map(tool => (
-                    <ToolOverviewItem tool={tool}/>
-                ))}
-                </tbody>
-            </table>
-        </div>
+        <Box sx={{display: 'flex'}}>
+            <CssBaseline />
+            <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Grid container spacing={3}>
+                    <Grid item xs={12}>
+                        <Paper sx={{
+                            p: 2,
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}>
+                            <h1>Tool Overview</h1>
+                        </Paper>
+                    </Grid>
+                    <Grid item xs={12}>
+                        <Paper sx={{
+                            p: 2,
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}>
+                            <ToolOverviewList tools={data}/>
+                        </Paper>
+                    </Grid>
+                </Grid>
+            </Container>
+        </Box>
     );
 }
