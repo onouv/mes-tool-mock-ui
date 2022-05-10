@@ -10,7 +10,7 @@ export const ToolOverviewItem: React.FC<ToolOverviewItemProps> = ({tool}: ToolOv
     return (
       <div className="tool-overview-item">
           <p>
-              {tool.id} | {tool.name} | <ToolStateIndicator state={tool.state}/>
+              {tool.id} | {tool.name} | <ToolStateIndicator states={tool.states}/>
           </p>
       </div>
     );

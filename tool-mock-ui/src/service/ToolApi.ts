@@ -5,12 +5,12 @@ import {ToolDetailsDto} from "../model/ToolDetailsDto";
 export const toolApi = createApi({
     reducerPath: 'toolApi',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:8080/mes/tool/',
+        baseUrl: 'http://localhost:8080/mes/tool/mock',
     }),
     endpoints: (builder) => {
         return ({
             getToolOverviews: builder.query<ToolDescriptor[], void>({
-                query: () => 'overviews/mock',
+                query: () => '/overviews',
             }),
             getToolDetails: builder.query<ToolDetailsDto, String>({
                 query: (toolId: String) => `${toolId}/mock`,
