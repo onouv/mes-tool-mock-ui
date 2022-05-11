@@ -69,8 +69,8 @@ export function isUpProcessing(states: Array<ToolStates>): boolean {
 }
 
 function checkSubstateOfUp(states: Array<ToolStates>, subState: ToolStates): boolean {
-    if (states.length === 0)
-        throw new InvalidStateObjectError();
+    if (isDown(states))
+        return false;
 
     if(states.length <= 2) {
         if(states[0] === ToolStates.UP)
